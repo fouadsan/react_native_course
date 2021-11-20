@@ -145,4 +145,4 @@ const MainNavigator = createDrawerNavigator(
   }
 );
 
-export default createAppContainer(FiltersNavigator); // MainNavigator !!!
+export default createAppContainer(MealFavTabNavigator); // MainNavigator !!!
