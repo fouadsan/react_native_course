@@ -1,10 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 // import { composeWithDevTools } from "redux-devtools-extension";
+import ReduxThunk from "redux-thunk";
 
 import productsReducer from "./store/reducers/products";
 import cartReducer from "./store/reducers/cart";
@@ -24,7 +25,7 @@ const fetchFonts = () => {
   });
 };
 
-const store = createStore(rootReducer); //, composeWithDevTools();
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk)); //, composeWithDevTools();
 
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
