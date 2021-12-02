@@ -11,6 +11,7 @@ import {
   ProductDetailScreen,
   CartScreen,
   OrdersScreen,
+  AuthScreen,
 } from "../screens/shop";
 import { UserProductsScreen, EditProductScreen } from "../screens/user";
 import CustomHeaderButton from "../components/UI/CustomHeaderButton";
@@ -19,6 +20,7 @@ import Colors from "../constants/Colors";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
+const MainStack = createNativeStackNavigator();
 
 const screenOptions = {
   headerStyle: {
@@ -146,4 +148,20 @@ function App() {
   );
 }
 
-export default App;
+function MainApp() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={screenOptions}>
+        <Stack.Screen
+          name="Auth"
+          component={AuthScreen}
+          options={{ title: "Authenticate" }}
+        />
+
+        <Stack.Screen name="App" component={App} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default MainApp;

@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import OrderItem from "../../components/shop/OrderItem";
 import Colors from "../../constants/Colors";
-import * as ordersActions from "../../store/actions/oreders";
+import * as ordersActions from "../../store/actions/orders";
 
 function OrdersScreen() {
   const [isLoading, setIsLoading] = useState(false);
