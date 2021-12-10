@@ -9,6 +9,8 @@ import {
   MapScreen,
   PlacesListScreenOptions,
   NewPlaceScreenOptions,
+  PlaceDetailScreenOptions,
+  MapScreenOptions,
 } from "../screens";
 import Colors from "../constants/Colors";
 
@@ -38,7 +40,7 @@ export const PlacesNavigator = () => {
       <PlacesStackNavigator.Screen
         name="PlaceDetail"
         component={PlaceDetailScreen}
-        // options={}
+        options={PlaceDetailScreenOptions}
       />
       <PlacesStackNavigator.Screen
         name="NewPlace"
@@ -48,7 +50,7 @@ export const PlacesNavigator = () => {
       <PlacesStackNavigator.Screen
         name="Map"
         component={MapScreen}
-        // options={}
+        options={MapScreenOptions}
       />
     </PlacesStackNavigator.Navigator>
   );
